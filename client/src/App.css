@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.loading-container {
+  padding: 24px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #667eea;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

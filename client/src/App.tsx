@@ -7,14 +7,15 @@ import CustomersPage from './pages/CustomersPage'
 import CustomerDetailPage from './pages/CustomerDetailPage'
 import ReportingPage from './pages/ReportingPage'
 import { useAuth } from './store/auth'
+import React from 'react'
 
-function PrivateRoute({ children }: { children: JSX.Element }) {
+function PrivateRoute({ children }: { children: React.ReactElement }) {
   const { token } = useAuth()
   return token ? children : <Navigate to="/login" replace />
 }
 
 export default function App() {
-  const fallback = useMemo(() => <div style={{ padding: 24 }}>Loading...</div>, [])
+  const fallback = useMemo(() => <div className="loading-container">Loading...</div>, [])
   return (
     <Suspense fallback={fallback}>
       <Routes>
